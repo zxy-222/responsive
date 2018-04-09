@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./responsive-nav.css">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</body>
+<script src="./responsive-nav.min.js"></script>
+<script>
+  var navigation = responsiveNav("#nav", { // Selector: The ID of the wrapper
+  animate: true, // Boolean: 是否启动CSS过渡效果（transitions）， true 或 false
+  transition: 400, // Integer: 过渡效果的执行速度，以毫秒（millisecond）为单位
+  label: "Menu", // String: Label for the navigation toggle
+  insert: "before", // String: Insert the toggle before or after the navigation
+  customToggle: "", // Selector: Specify the ID of a custom toggle
+  openPos: "relative", // String: Position of the opened nav, relative or static
+  jsClass: "js", // String: 'JS enabled' class which is added to <html> el
+  debug: false, // Boolean: Log debug messages to console, true 或 false
+  init: function(){}, // Function: Init callback
+  open: function(){}, // Function: Open callback
+  close: function(){} // Function: Close callback
+});
+</script>
+<script>
+  window.onunload=function(){
+    navigation.destroy();
+  }
+</script>
+</html>
